@@ -1,0 +1,85 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5e01d7bd0bf0 .scope module, "tb_logic_gates" "tb_logic_gates" 2 1;
+ .timescale 0 0;
+v0x5e01d7be5920_0 .var "a", 0 0;
+v0x5e01d7be59e0_0 .net "and_o", 0 0, L_0x5e01d7be6120;  1 drivers
+v0x5e01d7be5ab0_0 .var "b", 0 0;
+v0x5e01d7be5bb0_0 .net "nand_o", 0 0, L_0x5e01d7be6380;  1 drivers
+v0x5e01d7be5c80_0 .net "nor_o", 0 0, L_0x5e01d7be64b0;  1 drivers
+v0x5e01d7be5d20_0 .net "not_a", 0 0, L_0x5e01d7be6060;  1 drivers
+v0x5e01d7be5df0_0 .net "or_o", 0 0, L_0x5e01d7be6230;  1 drivers
+v0x5e01d7be5ec0_0 .net "xnor_o", 0 0, L_0x5e01d7be6620;  1 drivers
+v0x5e01d7be5f90_0 .net "xor_o", 0 0, L_0x5e01d7be6520;  1 drivers
+S_0x5e01d7bd0d80 .scope module, "uut" "logic_gates" 2 6, 3 1 0, S_0x5e01d7bd0bf0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "not_a";
+    .port_info 3 /OUTPUT 1 "and_o";
+    .port_info 4 /OUTPUT 1 "or_o";
+    .port_info 5 /OUTPUT 1 "nand_o";
+    .port_info 6 /OUTPUT 1 "nor_o";
+    .port_info 7 /OUTPUT 1 "xor_o";
+    .port_info 8 /OUTPUT 1 "xnor_o";
+L_0x5e01d7be6060 .functor NOT 1, v0x5e01d7be5920_0, C4<0>, C4<0>, C4<0>;
+L_0x5e01d7be6120 .functor AND 1, v0x5e01d7be5920_0, v0x5e01d7be5ab0_0, C4<1>, C4<1>;
+L_0x5e01d7be6230 .functor OR 1, v0x5e01d7be5920_0, v0x5e01d7be5ab0_0, C4<0>, C4<0>;
+L_0x5e01d7be6380 .functor NAND 1, v0x5e01d7be5920_0, v0x5e01d7be5ab0_0, C4<1>, C4<1>;
+L_0x5e01d7be64b0 .functor NOR 1, v0x5e01d7be5920_0, v0x5e01d7be5ab0_0, C4<0>, C4<0>;
+L_0x5e01d7be6520 .functor XOR 1, v0x5e01d7be5920_0, v0x5e01d7be5ab0_0, C4<0>, C4<0>;
+L_0x5e01d7be6620 .functor XNOR 1, v0x5e01d7be5920_0, v0x5e01d7be5ab0_0, C4<0>, C4<0>;
+v0x5e01d7bbdb30_0 .net "a", 0 0, v0x5e01d7be5920_0;  1 drivers
+v0x5e01d7be51d0_0 .net "and_o", 0 0, L_0x5e01d7be6120;  alias, 1 drivers
+v0x5e01d7be5290_0 .net "b", 0 0, v0x5e01d7be5ab0_0;  1 drivers
+v0x5e01d7be5330_0 .net "nand_o", 0 0, L_0x5e01d7be6380;  alias, 1 drivers
+v0x5e01d7be53f0_0 .net "nor_o", 0 0, L_0x5e01d7be64b0;  alias, 1 drivers
+v0x5e01d7be5500_0 .net "not_a", 0 0, L_0x5e01d7be6060;  alias, 1 drivers
+v0x5e01d7be55c0_0 .net "or_o", 0 0, L_0x5e01d7be6230;  alias, 1 drivers
+v0x5e01d7be5680_0 .net "xnor_o", 0 0, L_0x5e01d7be6620;  alias, 1 drivers
+v0x5e01d7be5740_0 .net "xor_o", 0 0, L_0x5e01d7be6520;  alias, 1 drivers
+    .scope S_0x5e01d7bd0bf0;
+T_0 ;
+    %vpi_call 2 14 "$dumpfile", "logiv_gates_wave.vcd" {0 0 0};
+    %vpi_call 2 15 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5e01d7bd0bf0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x5e01d7bd0bf0;
+T_1 ;
+    %vpi_call 2 19 "$monitor", "A=%b B=%b | NOT=%b AND=%b OR=%b XOR=%b", v0x5e01d7be5920_0, v0x5e01d7be5ab0_0, v0x5e01d7be5d20_0, v0x5e01d7be59e0_0, v0x5e01d7be5df0_0, v0x5e01d7be5f90_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5e01d7be5920_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5e01d7be5ab0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5e01d7be5920_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5e01d7be5ab0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5e01d7be5920_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5e01d7be5ab0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5e01d7be5920_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5e01d7be5ab0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 26 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_logic_gates.v";
+    "logic_gates.v";
