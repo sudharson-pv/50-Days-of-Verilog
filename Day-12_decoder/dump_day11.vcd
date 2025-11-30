@@ -1,0 +1,41 @@
+$date
+	Sun Nov 30 20:45:50 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_decoder3_8 $end
+$var wire 8 ! y [7:0] $end
+$var reg 3 " a [2:0] $end
+$scope module D $end
+$var wire 3 # a [2:0] $end
+$var wire 8 $ y [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 $
+b0 #
+b0 "
+b1 !
+$end
+#10
+b1000 !
+b1000 $
+b11 "
+b11 #
+#20
+b100000 !
+b100000 $
+b101 "
+b101 #
+#30
+b10000000 !
+b10000000 $
+b111 "
+b111 #
+#40
