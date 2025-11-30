@@ -1,0 +1,95 @@
+$date
+	Fri Nov 28 21:37:41 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_demux1_4 $end
+$var wire 1 ! y3 $end
+$var wire 1 " y2 $end
+$var wire 1 # y1 $end
+$var wire 1 $ y0 $end
+$var reg 1 % a $end
+$var reg 2 & s [1:0] $end
+$scope module UUT $end
+$var wire 1 % a $end
+$var wire 2 ' s [1:0] $end
+$var wire 1 ! y3 $end
+$var wire 1 " y2 $end
+$var wire 1 # y1 $end
+$var wire 1 $ y0 $end
+$upscope $end
+$upscope $end
+$scope module tb_demux1_8 $end
+$var wire 8 ( y [7:0] $end
+$var reg 1 ) a $end
+$var reg 3 * s [2:0] $end
+$scope module UUT $end
+$var wire 1 ) a $end
+$var wire 3 + s [2:0] $end
+$var wire 8 , y [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 ,
+b0 +
+b0 *
+1)
+b1 (
+b0 '
+b0 &
+1%
+1$
+0#
+0"
+0!
+$end
+#10
+b10 (
+b10 ,
+0$
+1#
+b1 *
+b1 +
+b1 &
+b1 '
+#20
+b100 (
+b100 ,
+0#
+1"
+b10 *
+b10 +
+b10 &
+b10 '
+#30
+b10000000 (
+b10000000 ,
+0"
+1!
+b111 *
+b111 +
+b11 &
+b11 '
+#40
+b100000 (
+b100000 ,
+0!
+b101 *
+b101 +
+b1 &
+b1 '
+0%
+#50
+b0 (
+b0 ,
+b11 *
+b11 +
+0)
+b10 &
+b10 '
