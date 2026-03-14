@@ -1,0 +1,34 @@
+module sixteen_bit_alu (
+	input [15:0] a_in, b_in,
+	input [3:0]s,
+	output [15:0] y_out
+	);
+
+wire [15:0] add_out, sub_out, and_out, or_out, xor_out, not_out, left_shift_out, right_shift_out, increment_out, decrement_out ;
+
+assign add_out =  a_in + b_in;
+assign sub_out =  a_in - b_in;
+assign multiple_out = a_in * b_in;
+assign division_out  =  a_in / b_in;
+assign xor_out =  a_in ^ b_in;
+assign not_out =  ~ a_in;
+
+assign left_shift_out  =  a_in << 1;
+assign right_shift_out =  a_in >> 1;
+assign increment_out   =  a_in + 1;
+assign decrement_out   =  a_in - 1;
+
+
+assign y_out =  (s == 4'b0000) ? add_out  : 
+	            (s == 4'b0001) ? sub_out  :
+	            (s == 4'b0010) ? multiple_out :
+                (s == 4'b0011) ? division_out :
+                (s == 4'b0100) ? xor_out :        
+                (s == 4'b0101) ? not_out :      
+                (s == 4'b0110) ? left_shift_out :
+                (s == 4'b0111) ? right_shift_out:
+                (s == 4'b1000) ? increment_out  :
+                                 decrement_out  ;
+                
+
+endmodule 1
